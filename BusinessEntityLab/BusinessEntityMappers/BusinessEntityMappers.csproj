@@ -1,0 +1,89 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06656504-AB35-4517-977C-071CD7229EA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessEntityMappers</RootNamespace>
+    <AssemblyName>BusinessEntityMappers</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessEntityCollection.cs" />
+    <Compile Include="BusinessEntityCollectionFactory.cs" />
+    <Compile Include="BusinessEntityMapper.cs" />
+    <Compile Include="BusinessEntitySaveMapper.cs" />
+    <Compile Include="CausesLoadAttribute.cs" />
+    <Compile Include="Emit\BusinessEntityReflectionHelper.cs" />
+    <Compile Include="Emit\BusinessEntityTypes.cs" />
+    <Compile Include="Emit\CausesLoadDtoBuilder.cs" />
+    <Compile Include="Emit\CausesLoadInterfaceBuilder.cs" />
+    <Compile Include="Emit\ConnectedStateBuilder.cs" />
+    <Compile Include="Emit\CreatedStateBuilder.cs" />
+    <Compile Include="Emit\DtoFieldInfo.cs" />
+    <Compile Include="Emit\InheritedProperty.cs" />
+    <Compile Include="Emit\LoadedStateBuilder.cs" />
+    <Compile Include="Emit\IdentityPropertyInvestigator.cs" />
+    <Compile Include="Emit\RuntimeStateFactory.cs" />
+    <Compile Include="Emit\StateBuilderBase.cs" />
+    <Compile Include="Emit\StateContextActivator.cs" />
+    <Compile Include="Emit\StateContextBuilder.cs" />
+    <Compile Include="Emit\StateContextGenerator.cs" />
+    <Compile Include="EmptyLoadCollectionStrategy.cs" />
+    <Compile Include="EntitySource.cs" />
+    <Compile Include="Exceptions\LoadUnexistedEntityException.cs" />
+    <Compile Include="IBusinessEntityCollection.cs" />
+    <Compile Include="IdentityPropertyAttribute.cs" />
+    <Compile Include="IEntityListLoader.cs" />
+    <Compile Include="IEntityLoader.cs" />
+    <Compile Include="IEntitySource.cs" />
+    <Compile Include="IBusinessCollectionItemsSource.cs" />
+    <Compile Include="ILoaderFactory.cs" />
+    <Compile Include="IMappedCollection.cs" />
+    <Compile Include="IMapper.cs" />
+    <Compile Include="ISaveMapper.cs" />
+    <Compile Include="ISaver.cs" />
+    <Compile Include="IStateContext.cs" />
+    <Compile Include="IStoreEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bltoolkit\BLToolkit.2.csproj">
+      <Project>{0C325F5D-E50E-4340-8724-D29896CCC583}</Project>
+      <Name>BLToolkit.2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
